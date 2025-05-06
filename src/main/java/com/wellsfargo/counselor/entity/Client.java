@@ -1,17 +1,11 @@
 package com.wellsfargo.counselor.entity;
-
-
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-
-@Entity
-public class Advisor {
-
+public class Client {
     @Id
     @GeneratedValue()
-    private long advisorId;
+    private long clientId;
 
     @Column(nullable = false)
     private String firstName;
@@ -20,38 +14,31 @@ public class Advisor {
     private String lastName;
 
     @Column(nullable = false)
-    private String address;
-
+    private String email;
     @Column(nullable = false)
     private String phone;
-
     @Column(nullable = false)
-    private String email;
+    private String address;
 
-    protected Advisor() {
+    protected Client(){
 
     }
-
-    public Advisor(String firstName, String lastName, String address, String phone, String email) {
+    public Client(String firstName, String lastName, String email, String phone, String address){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
-        this.phone = phone;
         this.email = email;
+        this.phone = phone;
+        this.address = address;
     }
-
-    public Long getAdvisorId() {
-        return advisorId;
+    public Long getClientId() {
+        return clientId;
     }
-
     public String getFirstName() {
         return firstName;
-    }
-
-    public void setFirstName(String firstName) {
+    } 
+    public void setFirstName(String firstName){
         this.firstName = firstName;
     }
-
     public String getLastName() {
         return lastName;
     }
@@ -84,4 +71,3 @@ public class Advisor {
         this.email = email;
     }
 }
-// Removed the Client class from this file
